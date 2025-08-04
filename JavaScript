@@ -1,1 +1,8 @@
-console.log("ওয়েবসাইট লোড হয়েছে!");
+function translateText() {
+  const input = document.getElementById("inputText").value;
+
+  // Dummy translation
+  const translated = input.split('').reverse().join('');
+
+  document.getElementById("outputText").innerText = translated;
+}
