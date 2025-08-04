@@ -2,23 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Translation Tool</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Translation Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; background: #f2f2f2; }
+    textarea, select, button { margin: 10px; padding: 10px; width: 80%; max-width: 500px; }
+    .box { background: white; padding: 20px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  </style>
 </head>
 <body>
-  <h1>Online Translator</h1>
+  <div class="box">
+    <h1>🌐 Translation Website</h1>
+    <textarea id="inputText" rows="4" placeholder="Enter text here..."></textarea><br>
+    <select id="targetLang">
+      <option value="bn">Bangla</option>
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+    </select><br>
+    <button onclick="translateText()">Translate</button>
+    <h3>Translated:</h3>
+    <p id="outputText"></p>
+  </div>
 
-  <textarea id="inputText" placeholder="Write something to translate..."></textarea>
-  
-  <button onclick="translateText()">Translate</button>
-  
-  <div id="outputText"></div>
-
-  <footer>
-    <a href="about.html">About</a> | <a href="contact.html">Contact</a>
-  </footer>
-
-  <script src="script.js"></script>
+  <script>
+    async function translateText() {
+      const text = document.getElementById('inputText').value;
+      const targetLang = document.getElementById('targetLang').value;
+      const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`);
+      const data = await res.json();
+      document.getElementById('outputText').innerText = data[0][0][0];
+    }
+  </script>
 </body>
 </html>
