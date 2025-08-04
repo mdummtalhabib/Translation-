@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>আমার ওয়েবসাইট</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Translation Project</title>
 </head>
 <body>
-  <h1>স্বাগতম আমার ওয়েবসাইটে</h1>
-  <p>এই ওয়েবসাইটটি মোবাইল দিয়ে বানানো হয়েছে।</p>
-  <script src="script.js"></script>
+  <h1>আসসালামু আলাইকুম</h1>
+  <p>এটি আমার নিজের তৈরি ওয়েবসাইট।</p>
 </body>
 </html>
