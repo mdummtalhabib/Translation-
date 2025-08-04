@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Translation Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Translation Tool</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>আসসালামু আলাইকুম</h1>
-  <p>এটি আমার নিজের তৈরি ওয়েবসাইট।</p>
+  <h1>Online Translator</h1>
+
+  <textarea id="inputText" placeholder="Write something to translate..."></textarea>
+  
+  <button onclick="translateText()">Translate</button>
+  
+  <div id="outputText"></div>
+
+  <footer>
+    <a href="about.html">About</a> | <a href="contact.html">Contact</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
